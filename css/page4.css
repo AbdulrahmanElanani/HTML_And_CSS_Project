@@ -1,0 +1,512 @@
+/* Start Variable */
+:root {
+    --main-color: rgba(255, 255, 255, 0.10);
+    --sacendry-color: #ee626b;
+    --therd-color: #008af8;
+    --fourth-color: #eeeeee;
+    --text-color: #7a7a7a;
+    --back-color: #f7f7f7;
+    --color: #c8c8c8;
+}
+
+::-webkit-scrollbar {
+    width: 15px;
+}
+
+::-webkit-scrollbar-track {
+    background-color: white;
+}
+
+::-webkit-scrollbar-track:hover {
+    background-color: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: var(--therd-color);
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background-color: var(--sacendry-color);
+}
+
+/* End Variable */
+/* Start Global Rules  */
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+}
+
+ul {
+    list-style: none;
+}
+
+.container {
+    padding-left: 10px;
+    padding-right: 10px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Small  */
+@media (min-Width:767px) {
+    .container {
+        width: 750px;
+    }
+
+}
+
+/* Medium  */
+@media (min-Width:991px) {
+    .container {
+        width: 970px;
+    }
+}
+
+/* Large  */
+@media (min-Width:1200px) {
+    .container {
+        width: 1170px;
+    }
+}
+
+/* End Global Rules  */
+/* Start Heading  */
+.header {
+    position: fixed;
+    background-color: var(--therd-color);
+    width: 100%;
+    z-index: 5;
+}
+
+.header .container {
+    display: flex;
+    padding: 16px 0;
+    justify-content: space-between;
+    align-items: center;
+
+}
+
+.header .container .menu {
+    position: relative;
+}
+
+.header .container .menu ul {
+    display: flex;
+    gap: 35px;
+    align-items: center;
+}
+
+@media (max-Width:992px) {
+    .container {
+        width: 750px;
+    }
+
+    .header .container .menu ul {
+        gap: 0;
+
+    }
+}
+
+@media (max-Width:767px) {
+    .header .container .menu ul {
+        display: none;
+    }
+
+    .container {
+        width: 400px;
+    }
+}
+
+
+.header .container .menu ul li a {
+    text-decoration: none;
+    color: white;
+    font-weight: 300;
+    padding: 10px 20px;
+}
+
+.header .container .menu ul li.active a {
+    background-color: var(--main-color);
+    border-radius: 20px;
+    -webkit-border-radius: 20px;
+    -moz-border-radius: 20px;
+    -ms-border-radius: 20px;
+    -o-border-radius: 20px;
+}
+
+.header .container .menu ul li a:hover {
+    background-color: var(--main-color);
+    border-radius: 20px;
+    -webkit-border-radius: 20px;
+    -moz-border-radius: 20px;
+    -ms-border-radius: 20px;
+    -o-border-radius: 20px;
+}
+
+.header .container .menu ul li:last-child a {
+    padding: 10px 20px;
+    background-color: var(--sacendry-color);
+    text-transform: uppercase;
+    border-radius: 20px;
+    -webkit-border-radius: 20px;
+    -moz-border-radius: 20px;
+    -ms-border-radius: 20px;
+    -o-border-radius: 20px;
+}
+
+
+.header .container .menu .toggol span {
+    position: relative;
+    display: block;
+    background-color: white;
+    height: 2px;
+    margin-bottom: 10px;
+    width: 35px;
+
+}
+
+@media (min-width:768px) {
+    .header .container .menu .toggol span {
+        display: none;
+    }
+}
+
+
+
+@media (max-Width:767px) {
+    .header .container .menu .toggol:hover+ul {
+        display: block;
+    }
+
+    .header .container .menu .toggol::after {
+        content: "";
+        position: absolute;
+        border-width: 15px;
+        border-color: rgb(0, 0, 255, 10%) transparent transparent transparent;
+        border-style: solid;
+        top: 27px;
+        left: 2px;
+    }
+
+    .header .container .menu ul {
+        width: 200px;
+        background-color: var(--therd-color);
+        position: absolute;
+        top: 40px;
+        left: -50%;
+        overflow: hidden;
+        transform: translateX(-50%);
+        -webkit-transform: translateX(-50%);
+        -moz-transform: translateX(-50%);
+        -ms-transform: translateX(-50%);
+        -o-transform: translateX(-50%);
+        border-radius: 20px;
+        -webkit-border-radius: 20px;
+        -moz-border-radius: 20px;
+        -ms-border-radius: 20px;
+        -o-border-radius: 20px;
+    }
+
+    .header .container .menu ul li a {
+        text-align: left;
+        display: block;
+        margin: 0;
+        color: white;
+        border-bottom: 1px solid #ccc;
+        transition: 0.5s;
+        -webkit-transition: 0.5s;
+        -moz-transition: 0.5s;
+        -ms-transition: 0.5s;
+        -o-transition: 0.5s;
+    }
+
+    .header .container .menu ul li a:hover {
+        color: #ee626b;
+        margin-left: 5px;
+        border-radius: 0%;
+        -webkit-border-radius: 0%;
+        -moz-border-radius: 0%;
+        -ms-border-radius: 0%;
+        -o-border-radius: 0%;
+    }
+
+    .header .container .menu ul li:last-child a,
+    .header .container .menu ul li.active a {
+        background-color: var(--therd-color);
+        border-radius: 0;
+        -webkit-border-radius: 0;
+        -moz-border-radius: 0;
+        -ms-border-radius: 0;
+        -o-border-radius: 0;
+    }
+
+    .header .container .menu ul li:last-child a {
+        border: none;
+    }
+}
+
+/* End Heading  */
+/* Start Landing  */
+.landing {
+    background-image: url(../imge/banner-bg.jpg);
+    background-size: cover;
+    padding-top: 250px;
+    border-bottom-left-radius: 180px;
+    border-bottom-right-radius: 180px;
+    padding-bottom: 60px;
+}
+
+.landing .container {
+    text-align: center;
+
+}
+
+.landing .container .info {
+    color: white;
+    padding-bottom: 70px;
+}
+
+.landing .container .info h2 {
+    text-transform: uppercase;
+    font-size: 47px;
+    margin-bottom: 30px;
+}
+
+.landing .container .info h6 {
+    font-size: 15px;
+    font-weight: normal;
+}
+
+/* End Landing  */
+/* Start Section  */
+.section {
+    margin-top: 120px;
+}
+
+.section .container .content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+
+.section .container .content .element1 {
+    width: 45%;
+    max-width: 100%;
+    background-color: var(--back-color);
+    padding: 70px;
+    border-radius: 20px;
+    -webkit-border-radius: 20px;
+    -moz-border-radius: 20px;
+    -ms-border-radius: 20px;
+    -o-border-radius: 20px;
+}
+
+.section .container .content .element1 h6 {
+    margin-bottom: 15px;
+    font-size: 12px;
+    text-transform: uppercase;
+    font-weight: bold;
+    color: var(--sacendry-color);
+}
+
+.section .container .content .element1 h3 {
+    margin-bottom: 60px;
+    font-size: 30px;
+}
+
+.section .container .content .element1 p {
+    line-height: 1.8;
+    font-size: 11px;
+    font-weight: 500;
+    margin-bottom: 60px;
+}
+
+.section .container .content .element1 .about span {
+    display: block;
+    font-size: 12px;
+    font-weight: 700;
+    margin-bottom: 5px;
+}
+
+.section .container .content .element1 .about p {
+    color: var(--text-color);
+    margin-bottom: 40px;
+}
+
+.section .container .content .element1 .about p.botom {
+    margin-bottom: 0;
+}
+
+.section .container .content .element {
+    width: 45%;
+    max-width: 100%;
+    overflow: hidden;
+}
+
+.section .container .content .element form {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.section .container .content .element form input {
+    max-width: 100%;
+    padding: 20px;
+    width: 45%;
+    background-color: var(--back-color);
+    border: none;
+    outline: none;
+    margin-top: 60px;
+    margin-bottom: -30px;
+    border-radius: 30px;
+    -webkit-border-radius: 30px;
+    -moz-border-radius: 30px;
+    -ms-border-radius: 30px;
+    -o-border-radius: 30px;
+    transition: 0.3s;
+    -webkit-transition: 0.3s;
+    -moz-transition: 0.3s;
+    -ms-transition: 0.3s;
+    -o-transition: 0.3s;
+}
+
+.section .container .content .element form input:focus,
+.section .container .content .element form textarea:focus {
+    border: 2px solid var(--therd-color);
+}
+
+.section .container .content .element form input::placeholder,
+.section .container .content .element form textarea::placeholder {
+    color: var(--color);
+}
+
+.section .container .content .element form textarea {
+    width: 100%;
+    margin-top: 60px;
+    margin-bottom: 50px;
+    height: 115px;
+    outline: none;
+    border: none;
+    background-color: var(--back-color);
+    padding: 20px;
+    border-radius: 30px;
+    -webkit-border-radius: 30px;
+    -moz-border-radius: 30px;
+    -ms-border-radius: 30px;
+    -o-border-radius: 30px;
+    transition: 0.3s;
+    -webkit-transition: 0.3s;
+    -moz-transition: 0.3s;
+    -ms-transition: 0.3s;
+    -o-transition: 0.3s;
+}
+
+.section .container .content .element form a {
+    text-decoration: none;
+    text-transform: uppercase;
+    margin-top: -20px;
+    background-color: var(--sacendry-color);
+    color: white;
+    padding: 20px;
+    border-radius: 30px;
+    -webkit-border-radius: 30px;
+    -moz-border-radius: 30px;
+    -ms-border-radius: 30px;
+    -o-border-radius: 30px;
+    transition: 0.3s;
+    -webkit-transition: 0.3s;
+    -moz-transition: 0.3s;
+    -ms-transition: 0.3s;
+    -o-transition: 0.3s;
+}
+
+.section .container .content .element form a:hover {
+    background-color: var(--therd-color);
+}
+
+@media (max-width:991px) {
+
+    .section .container .content .element1,
+    .section .container .content .element {
+        width: 100%;
+    }
+
+    .section .container .content .element1 {
+        margin-bottom: 50px;
+    }
+}
+
+@media (max-width:767px) {
+    .section .container .content .element form input {
+        width: 100%;
+    }
+}
+
+/* End Section  */
+/* Start Footer  */
+.footer {
+    margin-top: 220px;
+    /* overflow: hidden; */
+    background-color: var(--therd-color);
+    border-top-left-radius: 180px;
+    border-top-right-radius: 180px;
+    color: white;
+}
+
+.footer .info {
+    padding: 0 180px 60px;
+
+
+}
+
+.footer .info p {
+    text-align: center;
+    max-width: 100%;
+    font-size: 20px;
+    line-height: 120px;
+}
+
+.footer .info p a {
+    text-decoration: none;
+    color: white;
+    font-size: 20px;
+    margin-left: 30px;
+    transition: 0.3s;
+    -webkit-transition: 0.3s;
+    -moz-transition: 0.3s;
+    -ms-transition: 0.3s;
+    -o-transition: 0.3s;
+}
+
+.footer .info p a:hover {
+    color: rgb(200, 191, 191);
+}
+
+@media (max-width:767px) {
+    .footer .info {
+        padding: 0 10px 20px;
+    }
+
+    .footer .info p {
+        max-width: 100%;
+        font-size: 14px;
+        line-height: 90px;
+    }
+
+    .footer .info p a {
+        font-size: 14px;
+    }
+}
+
+/* End Footer  */
